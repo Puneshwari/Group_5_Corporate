@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Form</title>
+<style type="text/css">
+body{
+	margin: 0;
+	padding: 0;
+	font-family: montserrat; 
+     background: linear-gradient(120deg,#2980b9, #8e44ad);  
+ /*   background: rgb(117,79,67); */
+	height: 100vh;
+	overflow: hidden;
+}
+.center{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	width:400px;	
+	border-radius:10px;
+}
+.float-container {
+    
+}
+.float-child {
+    width: 40%;
+    float: left;
+    padding: 20px;
+   
+} 
+
+.topbar{
+	/* background-color: brown; */
+	background-color: rgb(219, 37, 77);
+	padding: 8px 3px 8px 10px;
+	position:absolute;
+	top:0%;
+	width:100%;
+}
+
+ .home{
+    padding: 8px 3px 0px 10px;
+    display:flex;
+} 
+
+</style>
+</head>
+<body>
+ <header>
+<div class="topbar">
+<form action="homePageAdmin.jsp">
+  <span>    <input type="submit" value="Go Home"></span>    
+ </form>
+ </div>
+</header> 
+
+
+<div class="center">
+<div>
+<form action="CorpServlet" method="get">
+<h1>Add New Corporate</h1>
+
+  
+<table>
+ 
+<tr><td>Corporate Name:</td><td><input type="text" name="CorpName" required/></td></tr>
+<tr><td>Corporate Address:</td><td><input type="text" name="CorpAddress" required/></td></tr>
+<tr><td> Corporate Phone:</td><td><input type="tel" name="CorpPhone" pattern="[789][0-9]{9}" placeholder="10 digit start with 7,8,9" maxlength=10 minlength=10 required/></td></tr>
+<!-- <tr><td><a href="corpEntry.jsp">Back</a></td> -->
+</table>
+<div class="float-child">
+
+<input type="submit" value="Save"/>
+<input type="hidden" name="action" value="add"/>
+
+</div>
+</form>
+</div>
+
+<div class="float-container">
+<div class="float-child">
+<form action="corpEntry.jsp">
+<input type="submit" value="Back"/>
+</form>
+</div>
+
+
+</div>
+
+</div>
+
+</body>
+</html>
